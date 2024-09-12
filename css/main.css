@@ -1,0 +1,94 @@
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+
+body{
+    background-color: #0e0d0d;
+}
+
+/* estilos de header */
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    color: whitesmoke;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+/*estilos de main*/
+main{
+    height: 70vh;
+    margin: 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 20%);
+    row-gap: 1.5rem;
+    align-content: center;
+}
+
+main div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .img-dos, main .img-cinco{
+    display: none;
+}
+
+footer{
+    color: whitesmoke;
+    text-align: center;
+}
+
+/*estilos de tablet*/
+
+@media screen and (min-width:600px){
+    header{
+        justify-content: space-between;
+    }
+
+main{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 40%);
+    column-gap: 1.5rem;
+}
+    main .img-cuatro{
+        grid-column: span 2;
+    }
+}
+
+/*estilos de desktop*/
+
+@media screen and (min-width:1024px){
+    main .img-dos, main .img-cinco{
+        display: block;
+    }
+    main{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30% 30% 20%;
+    }
+
+    main .img-uno, main .img-tres{
+        grid-row: span 2;
+    }
+
+    main .img-dos, main .img-cuatro{
+        grid-column: span 1;
+    }
+    main .img-cinco{
+        grid-column: span 3;
+    }
+}
